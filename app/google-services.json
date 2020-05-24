@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "196009497796",
+    "firebase_url": "https://constore-820a4.firebaseio.com",
+    "project_id": "constore-820a4",
+    "storage_bucket": "constore-820a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196009497796:android:84d9f8447741f7ba",
+        "android_client_info": {
+          "package_name": "com.constore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196009497796-9mvpftpbpn3sbtuj031nka0e87d44gc6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.constore",
+            "certificate_hash": "6f48df40afd1d8b92c2678937179c9615a4f3013"
+          }
+        },
+        {
+          "client_id": "196009497796-7kfko4o3h3ch5m7h1j97h2ilui9q0j3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbBOujzQ5CX5lcszitk3HqKB-CqCgSnmM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196009497796-7kfko4o3h3ch5m7h1j97h2ilui9q0j3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

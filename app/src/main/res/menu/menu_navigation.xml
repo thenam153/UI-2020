@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/button_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/button_category"
+        android:enabled="true"
+        android:icon="@drawable/ic_payment_black_24dp"
+        android:title="Phân loại"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/button_rate"
+        android:enabled="true"
+        android:icon="@drawable/ic_shopping_bag"
+        android:title="@string/title_activity_cart"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/button_notification"
+        android:enabled="true"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_notifications"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/button_contact"
+        android:enabled="true"
+        android:icon="@drawable/ic_perm_contact_calendar_black_24dp"
+        android:title="Tôi"
+        app:showAsAction="ifRoom" />
+</menu>
