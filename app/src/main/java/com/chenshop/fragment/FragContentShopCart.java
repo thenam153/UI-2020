@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 import com.chenshop.R;
-import com.chenshop.adapter.GridviewAdapter;
+import com.chenshop.adapter.GAdapter;
 import com.chenshop.layout.ExpandableHeightGridView;
 import com.chenshop.model.bean.Beanclass;
 import com.chenshop.view.activity.HomeActivity;
@@ -17,18 +17,18 @@ import com.chenshop.view.activity.ProductDetailActivity;
 
 import java.util.ArrayList;
 
-public class TabFragment2 extends Fragment {
+public class FragContentShopCart extends Fragment {
 
 
     private ExpandableHeightGridView gridview;
     private ArrayList<Beanclass> beanclassArrayList;
-    private GridviewAdapter gridviewAdapter;
+    private GAdapter gAdapter;
     private View view;
 
-    private int[] IMAGEgrid = {R.drawable.w1, R.drawable.w2, R.drawable.w3, R.drawable.w4, R.drawable.w5, R.drawable.w6};
-    private String[] TITLeGgrid = {"Quần soóc bò", "Quần sooc vải", "Quần dài nâu", "Quần jean nữ", "Chân váy đen", "Chân váy sọc"};
-    private String[] DIscriptiongrid = {"Min 2% off", "Min 3% off", "Min 4% off", "Min 6% off", "Min 7% off", "Min 7% off"};
-    private String[] Dategrid = {"499,000đ", "349,000đ", "499,000đ", "599,000đ", "299,000đ", "299,000đ"};
+    private int[] IMAGEgrid = {R.drawable.q1, R.drawable.q2, R.drawable.q3, R.drawable.q4, R.drawable.q5, R.drawable.q6};
+    private String[] TITLeGgrid = {"Khẩu trang", "Khăn tắm", "Combo tất", "Khăn lên nữ", "Khăn len đỏ", "Thắt lưng nữ"};
+    private String[] DIscriptiongrid = {"Min 1% off", "Min 2% off", "Min 5% off", "Min 6% off", "Min 6% off", "Min 5% off"};
+    private String[] Dategrid = {"69,000đ", "149,000đ", "100,000đ", "299,000đ", "299,000đ", "350,000đ"};
 
 
     @Override
@@ -44,10 +44,10 @@ public class TabFragment2 extends Fragment {
             beanclassArrayList.add(beanclass);
 
         }
-        gridviewAdapter = new GridviewAdapter(getActivity(), beanclassArrayList);
+        gAdapter = new GAdapter(getActivity(), beanclassArrayList);
         gridview.setExpanded(true);
 
-        gridview.setAdapter(gridviewAdapter);
+        gridview.setAdapter(gAdapter);
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

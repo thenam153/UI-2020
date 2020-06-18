@@ -14,7 +14,7 @@ import com.chenshop.R;
 
 public class NotificationActivity extends AppCompatActivity {
 
-    LinearLayout linear1, linear2, linear3, linear4;
+    LinearLayout linear1, linear2;
     TextView discount, activity, txtNoti;
 
     @Override
@@ -33,10 +33,10 @@ public class NotificationActivity extends AppCompatActivity {
 
         linear1 = (LinearLayout) findViewById(R.id.linear1);
         linear2 = (LinearLayout) findViewById(R.id.linear2);
-        linear3 = (LinearLayout) findViewById(R.id.linear3);
-        linear4 = (LinearLayout) findViewById(R.id.linear4);
+//        linear3 = (LinearLayout) findViewById(R.id.linear3);
+//        linear4 = (LinearLayout) findViewById(R.id.linear4);
         discount = (TextView) findViewById(R.id.discount);
-        activity = (TextView) findViewById(R.id.activity);
+//        activity = (TextView) findViewById(R.id.activity);
 
         txtNoti = findViewById(R.id.txt_noti);
         String noti = getIntent().getStringExtra(ChooseAccountingActivity.SUCCESS);
@@ -60,24 +60,24 @@ public class NotificationActivity extends AppCompatActivity {
                 discount.setVisibility(View.GONE);
             }
         });
-        linear3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                linear4.setVisibility(View.VISIBLE);
-                linear3.setVisibility(View.GONE);
-                activity.setVisibility(View.VISIBLE);
-            }
-        });
-
-        linear4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                linear4.setVisibility(View.GONE);
-                linear3.setVisibility(View.VISIBLE);
-                activity.setVisibility(View.GONE);
-            }
-        });
+//        linear3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                linear4.setVisibility(View.VISIBLE);
+//                linear3.setVisibility(View.GONE);
+////                activity.setVisibility(View.VISIBLE);
+//            }
+//        });
+//
+//        linear4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                linear4.setVisibility(View.GONE);
+//                linear3.setVisibility(View.VISIBLE);
+////                activity.setVisibility(View.GONE);
+//            }
+//        });
 
 
     }

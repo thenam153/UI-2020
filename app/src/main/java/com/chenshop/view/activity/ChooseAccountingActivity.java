@@ -17,12 +17,12 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.chenshop.R;
-import com.chenshop.customfonts.MyTextView;
+import com.chenshop.fonts.TextView;
 
 public class ChooseAccountingActivity extends AppCompatActivity {
     public static final String SUCCESS = "Success";
     public static final String NOTIFICATION_CHANNEL_ID = "10001";
-    private MyTextView btnNext;
+    private TextView btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

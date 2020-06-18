@@ -1,23 +1,23 @@
-package com.chenshop.customfonts;
+package com.chenshop.fonts;
 
 import android.content.Context;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
-import android.widget.EditText;
 
-public class MyEditText extends EditText {
 
-    public MyEditText(Context context, AttributeSet attrs, int defStyle) {
+public class TextView extends android.support.v7.widget.AppCompatTextView {
+
+    public TextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
 
-    public MyEditText(Context context, AttributeSet attrs) {
+    public TextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public MyEditText(Context context) {
+    public TextView(Context context) {
         super(context);
         init();
     }

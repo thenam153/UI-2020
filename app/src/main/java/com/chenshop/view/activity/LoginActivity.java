@@ -81,27 +81,20 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      */
     private UserLoginTask mAuthTask = null;
 
-    // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
     private TextView txtForgetPass, txtRegist;
 
-    private GoogleApiClient mGoogleApiClient;
 
-    private CallbackManager mFacebookCallbackManager;
-
-    private SignInButton mGoogleSignInButton;
-    private LoginButton mFacebookSignInButton;
-
-    public String id, name, email, gender, birthday;
+    public String id, name, username = "admin@gmail.com", password="123456";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
-        mFacebookCallbackManager = CallbackManager.Factory.create();
+
         setContentView(R.layout.activity_login);
 
 
@@ -145,42 +138,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
-        mGoogleSignInButton = findViewById(R.id.google_sign_in_button);
-        googleBtnUi();
-        mGoogleSignInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signInWithGoogle();
-            }
-        });
 
-
-        mFacebookSignInButton = findViewById(R.id.facebook_sign_in_button);
-        mFacebookSignInButton.registerCallback(mFacebookCallbackManager,
-                new FacebookCallback<LoginResult>() {
-                    @Override
-                    public void onSuccess(final LoginResult loginResult) {
-                        handleSignInResult(new Callable<Void>() {
-                            @Override
-                            public Void call() throws Exception {
-                                LoginManager.getInstance().logOut();
-                                return null;
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onCancel() {
-                        handleSignInResult(null);
-                    }
-
-                    @Override
-                    public void onError(FacebookException error) {
-                        Log.d(LoginActivity.class.getCanonicalName(), error.getMessage());
-                        handleSignInResult(null);
-                    }
-                }
-        );
     }
 
     @Override
@@ -190,93 +148,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         super.onBackPressed();
     }
 
-    private void initializeGPlusSettings() {
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this, this)
-                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-                .build();
-        mGoogleSignInButton.setSize(SignInButton.SIZE_STANDARD);
-        mGoogleSignInButton.setScopes(gso.getScopeArray());
-    }
 
 
-    private void signInWithGoogle() {
-        if (mGoogleApiClient != null) {
-            mGoogleApiClient.disconnect();
-        }
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-                .build();
-
-        final Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
-            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-
-            if (result.isSuccess()) {
-                final GoogleApiClient client = mGoogleApiClient;
-
-                handleSignInResult(new Callable<Void>() {
-                    @Override
-                    public Void call() throws Exception {
-                        if (client != null) {
-
-                            Auth.GoogleSignInApi.signOut(client).setResultCallback(
-                                    new ResultCallback<Status>() {
-                                        @Override
-                                        public void onResult(Status status) {
-                                            Log.d(LoginActivity.class.getCanonicalName(),
-                                                    status.getStatusMessage());
-
-                                            /* TODO: handle logout failures */
-                                        }
-                                    }
-                            );
-
-                        }
-
-                        return null;
-                    }
-                });
-
-            } else {
-                handleSignInResult(null);
-            }
-        } else {
-            mFacebookCallbackManager.onActivityResult(requestCode, resultCode, data);
-        }
-    }
-
-    private void handleSignInResult(Callable<Void> logout) {
-        startActivity(new Intent(this, HomeActivity.class));
-    }
-
-    private void handleGPlusSignInResult(GoogleSignInResult result) {
-        Log.d(TAG, "handleSignInResult:" + result.isSuccess());
-        if (result.isSuccess()) {
-            GoogleSignInAccount acct = result.getSignInAccount();
-            //Fetch values
-            String personName = acct.getDisplayName();
-            String personPhotoUrl = acct.getPhotoUrl().toString();
-            String email = acct.getEmail();
-            String familyName = acct.getFamilyName();
-            Log.e(TAG, "Name: " + personName + ", email: " + email + ", Image: " + personPhotoUrl + ", Family Name: " + familyName);
-        }
-    }
 
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
@@ -322,56 +196,55 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * errors are presented and no actual login attempt is made.
      */
     private boolean attemptLogin() {
-        boolean cancel = false;
+        boolean reject = false;
         if (mAuthTask != null) {
-            cancel = true;
+            reject = true;
         }
-
-        // Reset errors.
         mEmailView.setError(null);
         mPasswordView.setError(null);
-
-        // Store values at the time of the login attempt.
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
-
-
         View focusView = null;
-
-        // Check for a valid password, if the user entered one.
         if (TextUtils.isEmpty(password)) {
             mPasswordView.setError(getString(R.string.error_field_required));
             focusView = mPasswordView;
-            cancel = true;
+            reject = true;
         } else if (!isPasswordValid(password)) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
             focusView = mPasswordView;
-            cancel = true;
+            reject = true;
         }
-
-        // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
             mEmailView.setError(getString(R.string.error_field_required));
             focusView = mEmailView;
-            cancel = true;
+            reject = true;
         } else if (!isEmailValid(email)) {
             mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = mEmailView;
-            cancel = true;
+            reject = true;
         }
 
-        if (cancel) {
-            // There was an error; don't attempt login and focus the first
-            // form field with an error.
+//        if(!email.equals(this.username)) {
+//            mEmailView.setError("This email not exist");
+//            focusView = mEmailView;
+//            reject = true;
+//        }
+        if(!password.equals(this.password)) {
+            mPasswordView.setError("This password not true");
+            focusView = mPasswordView;
+            reject = true;
+        }
+        if (reject) {
+            if(focusView == null) {
+                focusView = new EditText(this);
+            }
             focusView.requestFocus();
         } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
         }
-        return cancel;
+        return reject;
     }
 
     private boolean isEmailValid(String email) {
@@ -534,18 +407,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         protected void onCancelled() {
             mAuthTask = null;
             showProgress(false);
-        }
-    }
-    private void googleBtnUi() {
-        SignInButton googleButton = (SignInButton) findViewById(R.id.google_sign_in_button);
-        for (int i = 0; i < googleButton.getChildCount(); i++) {
-            View v = googleButton.getChildAt(i);
-            if (v instanceof TextView) {
-                TextView tv = (TextView) v;
-                tv.setSingleLine(true);
-                tv.setPadding(0, 0, 10, 0);
-                return;
-            }
         }
     }
 

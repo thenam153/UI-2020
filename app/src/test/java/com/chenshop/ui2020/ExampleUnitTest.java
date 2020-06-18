@@ -1,4 +1,4 @@
-package com.chenshop.btlui;
+package com.manh.ui2020;
 
 import com.chenshop.model.bean.Bank;
 import com.chenshop.model.db.Table;

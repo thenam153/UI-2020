@@ -35,7 +35,7 @@
                     android:layout_weight="0.1"
                     android:src="@drawable/ic_location" />
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -52,14 +52,14 @@
                     android:src="@drawable/ic_edit_black" />
             </LinearLayout>
 
-            <com.chenshop.customfonts.MyTextView
+            <com.chenshop.fonts.TextView
                 android:id="@+id/txt_username_payment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="50dp"
                 android:text="Đỗ Văn Nam 0967683628" />
 
-            <com.chenshop.customfonts.MyTextView
+            <com.chenshop.fonts.TextView
                 android:id="@+id/txt_address_payment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -92,7 +92,7 @@
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical">
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:id="@+id/txt_product_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:id="@+id/txt_product_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.chenshop.customfonts.MyTextView
+                    <com.chenshop.fonts.TextView
                         android:id="@+id/txt_product_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -134,7 +134,7 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <com.chenshop.customfonts.MyTextView
+            <com.chenshop.fonts.TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Đơn vị vận chuyển"
@@ -153,19 +153,19 @@
                     android:layout_weight="0.8"
                     android:orientation="vertical">
 
-                    <com.chenshop.customfonts.MyTextView
+                    <com.chenshop.fonts.TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Giao hàng tiết kiệm" />
 
-                    <com.chenshop.customfonts.MyTextView
+                    <com.chenshop.fonts.TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Giao hàng trong 2-3 ngày"
                         android:textSize="12dp" />
                 </LinearLayout>
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:id="@+id/txt_shipment_fee"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -196,7 +196,7 @@
                 android:layout_weight="0.1"
                 android:src="@drawable/ic_sale" />
 
-            <com.chenshop.customfonts.MyTextView
+            <com.chenshop.fonts.TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
@@ -225,7 +225,7 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
@@ -234,7 +234,7 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:id="@+id/txt_total_price"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -253,14 +253,14 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:text="Tổng tiền phí vận chuyển"
                     android:textSize="15sp" />
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:id="@+id/txt_total_shipment"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -278,7 +278,7 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
@@ -287,7 +287,7 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:id="@+id/txt_total"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -305,7 +305,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom">
 
-        <com.chenshop.customfonts.MyTextView
+        <com.chenshop.fonts.TextView
             android:id="@+id/btnNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

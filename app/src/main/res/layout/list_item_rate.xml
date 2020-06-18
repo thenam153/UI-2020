@@ -25,18 +25,18 @@
                 android:id="@+id/txt_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Đỗ Văn Nam"
+                android:text="Nguyễn Thế Nam"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
 
-            <com.chenshop.customfonts.MyTextView
+            <com.chenshop.fonts.TextView
                 android:id="@+id/txt_comment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Chất lượng tốt" />
 
-            <com.chenshop.customfonts.MyTextView
+            <com.chenshop.fonts.TextView
                 android:id="@+id/txt_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

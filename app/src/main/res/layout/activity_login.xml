@@ -31,14 +31,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="@dimen/activity_vertical_margin">
+            android:paddingTop="100dp">
             <ImageView
                 android:layout_width="300px"
                 android:layout_height="300px"
                 android:src="@drawable/logo"
                 android:layout_gravity="center"/>
 
-            <com.chenshop.customfonts.MyTextView
+            <com.chenshop.fonts.TextView
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
@@ -92,7 +92,7 @@
 
                 android:text="Đăng nhập" />
 
-            <com.chenshop.customfonts.MyTextView
+            <com.chenshop.fonts.TextView
                 android:id="@+id/txtForgetPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
                 android:text="Quên mật khẩu"
                 android:textColor="@color/colorLink" />
 
-            <com.chenshop.customfonts.MyTextView
+            <com.chenshop.fonts.TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -120,55 +120,7 @@
                 android:orientation="vertical">
 
 
-                <com.google.android.gms.common.SignInButton
-                    android:id="@+id/google_sign_in_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="38dp" />
 
-                <com.facebook.login.widget.LoginButton
-                    android:id="@+id/facebook_sign_in_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginRight="3dp" />
-                <!--<LinearLayout
-                    android:id="@+id/FrameLayout1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
-
-                    <com.facebook.login.widget.LoginButton
-                        android:id="@+id/login_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone" />
-
-                    <ImageView
-                        android:id="@+id/img_fb"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/facebook" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/FrameLayout2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="10dp">
-
-                    <com.google.android.gms.common.SignInButton
-                        android:id="@+id/btn_sign_in"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp" />
-
-                    <ImageView
-                        android:id="@+id/img_google"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/googleplus" />
-                </LinearLayout>-->
             </LinearLayout>
 
             <LinearLayout

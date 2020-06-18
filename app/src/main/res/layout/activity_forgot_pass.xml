@@ -33,7 +33,7 @@
                 android:layout_gravity="center"/>
 
 
-            <com.chenshop.customfonts.MyTextView
+            <com.chenshop.fonts.TextView
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_gravity="center"

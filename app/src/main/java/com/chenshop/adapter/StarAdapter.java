@@ -19,14 +19,14 @@ import com.chenshop.view.activity.ProductDetailActivity;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> implements View.OnClickListener {
+public class StarAdapter extends RecyclerView.Adapter<StarAdapter.RecyclerViewHolder> implements View.OnClickListener {
     Context context;
     CartActivity cartActivity = new CartActivity();
     TextView textView;
 
     ArrayList<Beanclass> beanList;
     public  static  final  String BEAN_EXTRA = "BeanClass";
-    public RecyclerViewAdapter(Context context, ArrayList<Beanclass> bean, TextView textView)
+    public StarAdapter(Context context, ArrayList<Beanclass> bean, TextView textView)
     {
         this.beanList = bean;
         this.context = context;

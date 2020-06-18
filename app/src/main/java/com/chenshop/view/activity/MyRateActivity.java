@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 
 import com.chenshop.R;
-import com.chenshop.adapter.RateRecycleViewAdapter;
+import com.chenshop.adapter.RateAdapter;
 import com.chenshop.model.bean.Beanclass;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class MyRateActivity extends AppCompatActivity {
 
     private ArrayList<Beanclass> beanclassArrayList;
-    private RateRecycleViewAdapter recyclerViewAdapter;
+    private RateAdapter recyclerViewAdapter;
 
     private ArrayList<Integer> IMAGEgrid = new ArrayList<Integer>();
     private ArrayList<String> TITLeGgrid = new ArrayList<String>();
@@ -55,7 +55,7 @@ public class MyRateActivity extends AppCompatActivity {
 
         //display list of product
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerViewAdapter = new RateRecycleViewAdapter(MyRateActivity.this, beanclassArrayList);
+        recyclerViewAdapter = new RateAdapter(MyRateActivity.this, beanclassArrayList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(recyclerViewAdapter);
 

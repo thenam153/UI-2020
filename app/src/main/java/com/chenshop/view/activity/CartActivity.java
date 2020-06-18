@@ -13,28 +13,27 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chenshop.R;
-import com.chenshop.adapter.RecyclerViewAdapter;
-import com.chenshop.customfonts.MyTextView;
+import com.chenshop.adapter.StarAdapter;
 import com.chenshop.model.bean.Beanclass;
 
 import java.util.ArrayList;
 
 public class CartActivity extends AppCompatActivity {
     private ArrayList<Beanclass> beanclassArrayList;
-    private RecyclerViewAdapter recyclerViewAdapter;
+    private StarAdapter starAdapter;
 
     private int[] IMAGEgrid = {R.drawable.q1, R.drawable.q2, R.drawable.pik1, R.drawable.w3};
     private String[] TITLeGgrid = {"Khẩu trang","Khăn tắm", "Áo phông unisex(trắng)", "Quần dài nâu"};
     private String[] DIscriptiongrid = {"Min 1% off", "Min 2% off", "Min 5% off", "Min 4% off"};
     private String[] Dategrid = {"69,000đ","149,000đ", "249,000đ", "599,000"};
-    MyTextView buynow;
+    TextView buynow;
     TextView total;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
-        buynow = (MyTextView) findViewById(R.id.clear_cart);
+        buynow = (TextView) findViewById(R.id.clear_cart);
         total = (TextView) findViewById(R.id.total);
 
 
@@ -72,9 +71,9 @@ public class CartActivity extends AppCompatActivity {
 
         //display list of product
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerViewAdapter = new RecyclerViewAdapter(CartActivity.this, beanclassArrayList, total);
+        starAdapter = new StarAdapter(CartActivity.this, beanclassArrayList, total);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(recyclerViewAdapter);
+        recyclerView.setAdapter(starAdapter);
 
 
     }

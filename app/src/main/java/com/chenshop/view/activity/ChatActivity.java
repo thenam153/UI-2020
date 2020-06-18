@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.chenshop.Handler.HttpDataHandler;
 import com.chenshop.R;
 import com.chenshop.adapter.CustomAdapter;
 import com.chenshop.adapter.MessageAdapter;
@@ -108,11 +107,7 @@ public class ChatActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(List<ChatModel>... params) {
-            String url = String.format("http://sandbox.api.simsimi.com/request.p?key=%s&lc=en&ft=1.0&text=%s", getString(R.string.simsimi_api), text);
-            models = params[0];
-            HttpDataHandler httpDataHandler = new HttpDataHandler();
-            stream = httpDataHandler.GetHTTPData(url);
-            return stream;
+            return null;
         }
 
         @Override

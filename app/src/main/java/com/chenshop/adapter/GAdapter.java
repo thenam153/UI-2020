@@ -15,14 +15,14 @@ import com.chenshop.model.bean.Beanclass;
 import java.util.ArrayList;
 
 
-public class GridviewAdapter extends BaseAdapter {
+public class GAdapter extends BaseAdapter {
 
     Context context;
 
     ArrayList<Beanclass> bean;
 
 
-    public GridviewAdapter(Context context, ArrayList<Beanclass> bean) {
+    public GAdapter(Context context, ArrayList<Beanclass> bean) {
         this.bean = bean;
         this.context = context;
     }

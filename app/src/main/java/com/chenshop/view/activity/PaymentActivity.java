@@ -13,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chenshop.R;
-import com.chenshop.customfonts.MyTextView;
 import com.chenshop.model.bean.Beanclass;
 import com.chenshop.model.bean.PaymentAddress;
 
@@ -26,7 +25,7 @@ public class PaymentActivity extends AppCompatActivity {
     private TextView txtAddressPayment, txtPaymentUserInfo, txtProductName, txtProductDetail, txtProductPrice, txtShipFee, txtTotalPrice, txtTotalShipFee, txtTotal;
     private EditText edtDiscount;
     private ImageView imgProduct, imgDeleteItem, imgEdit;
-    private MyTextView btnNext;
+    private TextView btnNext;
 
     private PaymentAddress paymentAddress;
 

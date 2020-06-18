@@ -4,14 +4,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.chenshop.fragment.TabFragment1;
-import com.chenshop.fragment.TabFragment2;
-import com.chenshop.fragment.TabFragment3;
+import com.chenshop.fragment.FragContent;
+import com.chenshop.fragment.FragContentSell;
+import com.chenshop.fragment.FragContentShopCart;
 
-public class PagerAdapter1 extends FragmentStatePagerAdapter {
+public class ViewAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
 
-    public PagerAdapter1(FragmentManager fm, int NumOfTabs) {
+    public ViewAdapter(FragmentManager fm, int NumOfTabs) {
         super(fm);
         this.mNumOfTabs = NumOfTabs;
     }
@@ -21,13 +21,13 @@ public class PagerAdapter1 extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                TabFragment1 tab1 = new TabFragment1();
+                FragContent tab1 = new FragContent();
                 return tab1;
             case 1:
-                TabFragment2 tab2 = new TabFragment2();
+                FragContentSell tab2 = new FragContentSell();
                 return tab2;
             case 2:
-                TabFragment3 tab3 = new TabFragment3();
+                FragContentShopCart tab3 = new FragContentShopCart();
                 return tab3;
             default:
                 return null;

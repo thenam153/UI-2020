@@ -46,7 +46,7 @@
                 >
 
 
-                    <com.chenshop.customfonts.MyTextView
+                    <com.chenshop.fonts.TextView
                         android:id="@+id/est"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
-                        <com.chenshop.customfonts.MyTextView
+                        <com.chenshop.fonts.TextView
 
                             android:id="@+id/itemname"
                             android:layout_width="match_parent"
@@ -110,7 +110,7 @@
 
                     </LinearLayout>
 
-                    <com.chenshop.customfonts.MyTextView
+                    <com.chenshop.fonts.TextView
                         android:id="@+id/price"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -141,7 +141,7 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <com.chenshop.customfonts.MyTextView
+                    <com.chenshop.fonts.TextView
                         android:id="@+id/discription"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -192,7 +192,7 @@
                 </LinearLayout>
 
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:id="@+id/discription1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -221,7 +221,7 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <com.chenshop.customfonts.MyTextView
+                    <com.chenshop.fonts.TextView
                         android:id="@+id/use"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -271,7 +271,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:id="@+id/discription2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -300,7 +300,7 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <com.chenshop.customfonts.MyTextView
+                    <com.chenshop.fonts.TextView
                         android:id="@+id/product"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -350,7 +350,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <com.chenshop.customfonts.MyTextView
+                <com.chenshop.fonts.TextView
                     android:id="@+id/discription3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -392,7 +392,7 @@
             android:background="#fff"
             android:src="@drawable/ic_chat" />
 
-        <com.chenshop.customfonts.MyTextView
+        <com.chenshop.fonts.TextView
             android:id="@+id/buynow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -403,7 +403,7 @@
             android:textColor="#fff"
             android:textSize="14dp" />
 
-        <com.chenshop.customfonts.MyTextView
+        <com.chenshop.fonts.TextView
             android:id="@+id/buy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

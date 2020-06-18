@@ -63,7 +63,7 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <com.chenshop.customfonts.MyTextView
+            <com.chenshop.fonts.TextView
                 android:id="@+id/clear_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

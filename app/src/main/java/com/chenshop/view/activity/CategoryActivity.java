@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.chenshop.R;
-import com.chenshop.adapter.PagerAdapter1;
+import com.chenshop.adapter.ViewAdapter;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 
 public class CategoryActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener {
@@ -35,7 +35,7 @@ public class CategoryActivity extends AppCompatActivity implements BaseSliderVie
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
 
-        PagerAdapter1 adapter = new PagerAdapter1(getSupportFragmentManager(), tabLayout.getTabCount());
+        ViewAdapter adapter = new ViewAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
 
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));

@@ -15,7 +15,7 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.chenshop.R;
-import com.chenshop.adapter.GridviewAdapter;
+import com.chenshop.adapter.GAdapter;
 import com.chenshop.layout.ChildAnimationExample;
 import com.chenshop.layout.ExpandableHeightGridView;
 import com.chenshop.layout.SliderLayout;
@@ -37,9 +37,9 @@ public class HomeActivity extends AppCompatActivity implements BaseSliderView.On
     SliderLayout mDemoSlider;
     private ExpandableHeightGridView gridview;
     private ArrayList<Beanclass> beanclassArrayList;
-    private GridviewAdapter gridviewAdapter;
+    private GAdapter gAdapter;
     private int[] IMAGEgrid = {R.drawable.pik1, R.drawable.w1, R.drawable.w2, R.drawable.pik2, R.drawable.q1, R.drawable.q2, R.drawable.q3, R.drawable.w3, R.drawable.q6, R.drawable.pik5};
-    private String[] TITLeGgrid = {"Áo phông unisex(trắng)", "Quần soóc bò", "Quần soóc vải(xanh)", "Áo phông unisex(đen)", "Khẩu trang", "Khăn tắm", "Combo tất", "Quần dài nâu", "Thắt lưng nữ", "Áo phông nữ(hồng)"};
+    private String[] TITLeGgrid = {"Áo phông", "Quần bò", "Quần soóc", "Áo phông", "Khẩu trang", "Khăn tắm", "Combo tất", "Quần dài", "Thắt lưng", "Áo nữ(hồng)"};
     private String[] DIscriptiongrid = {"Min 5% off", "Min 2% off", "Min 2% off", "Min 5% off", "Min 1% off", "Min 2% off", "Min 5% off", "Min 5% off", "Min 5% off", "Min 5% off"};
     private String[] Dategrid = {"249,000đ", "499,000đ", "349,000đ", "249,000đ", "69,000Đ", "149,000đ", "100,000đ", "549,000đ", "350,000đ", "249,000đ"};
 
@@ -63,10 +63,10 @@ public class HomeActivity extends AppCompatActivity implements BaseSliderView.On
             beanclassArrayList.add(beanclass);
 
         }
-        gridviewAdapter = new GridviewAdapter(HomeActivity.this, beanclassArrayList);
+        gAdapter = new GAdapter(HomeActivity.this, beanclassArrayList);
         gridview.setExpanded(true);
 
-        gridview.setAdapter(gridviewAdapter);
+        gridview.setAdapter(gAdapter);
         gridview.setFocusable(false);
 
         HashMap<String, Integer> file_maps = new HashMap<String, Integer>();
@@ -97,8 +97,7 @@ public class HomeActivity extends AppCompatActivity implements BaseSliderView.On
         mDemoSlider.addOnPageChangeListener(this);
         mDemoSlider.setVisibility(View.VISIBLE);
 
-//        Open ProductDetailActivity
-//        Created by NQchenshop - 23/12/2108
+
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -233,10 +232,10 @@ public class HomeActivity extends AppCompatActivity implements BaseSliderView.On
                 beanclassArrayList.add(beanclass);
 
             }
-            gridviewAdapter = new GridviewAdapter(HomeActivity.this, beanclassArrayList);
+            gAdapter = new GAdapter(HomeActivity.this, beanclassArrayList);
             gridview.setExpanded(true);
 
-            gridview.setAdapter(gridviewAdapter);
+            gridview.setAdapter(gAdapter);
         } else {
             // Hiển thị dữ liệu tìm thấy
             beanclassArrayList.clear();
@@ -249,10 +248,10 @@ public class HomeActivity extends AppCompatActivity implements BaseSliderView.On
                 }
 
 
-                gridviewAdapter = new GridviewAdapter(HomeActivity.this, beanclassArrayList);
+                gAdapter = new GAdapter(HomeActivity.this, beanclassArrayList);
                 gridview.setExpanded(true);
 
-                gridview.setAdapter(gridviewAdapter);
+                gridview.setAdapter(gAdapter);
             }
         }
         return true;

@@ -353,7 +353,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom">
 
-        <com.chenshop.customfonts.MyTextView
+        <com.chenshop.fonts.TextView
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

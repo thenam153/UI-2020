@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chenshop.R;
-import com.chenshop.customfonts.MyTextView;
 import com.chenshop.layout.ChildAnimationExample;
 import com.chenshop.layout.SliderLayout;
 import com.chenshop.model.bean.Beanclass;
@@ -28,7 +27,7 @@ public class ProductDetailActivity extends AppCompatActivity implements BaseSlid
     public static final String BEAN = "Bean";
     SliderLayout mDemoSlider;
 
-    MyTextView buy, est, itemname, price, buynow, addtocart;
+    TextView buy, est, itemname, price, buynow, addtocart;
 
     ImageView btnBack, imgChat;
 
@@ -51,7 +50,7 @@ public class ProductDetailActivity extends AppCompatActivity implements BaseSlid
         getSupportActionBar().setHomeAsUpIndicator(newdrawable);
 
 //                ***********discription**********
-        buy = (MyTextView) findViewById(R.id.buy);
+        buy = (TextView) findViewById(R.id.buy);
         est = findViewById(R.id.est);
         itemname = findViewById(R.id.itemname);
         price = findViewById(R.id.price);
@@ -59,8 +58,8 @@ public class ProductDetailActivity extends AppCompatActivity implements BaseSlid
         linear1 = (LinearLayout) findViewById(R.id.linear1);
         linear2 = (LinearLayout) findViewById(R.id.linear2);
         discription1 = (TextView) findViewById(R.id.discription1);
-        buynow = (MyTextView) findViewById(R.id.buynow);
-        addtocart = (MyTextView) findViewById(R.id.buy);
+        buynow = (TextView) findViewById(R.id.buynow);
+        addtocart = (TextView) findViewById(R.id.buy);
         addtocart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

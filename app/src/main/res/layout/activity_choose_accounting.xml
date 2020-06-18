@@ -13,7 +13,7 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <com.chenshop.customfonts.MyTextView
+        <com.chenshop.fonts.TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hình thức giao hàng" />
@@ -42,7 +42,7 @@
                 android:text="Giao hàng trong 30 phút" />
         </RadioGroup>
 
-        <com.chenshop.customfonts.MyTextView
+        <com.chenshop.fonts.TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -89,7 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.chenshop.customfonts.MyTextView
+        <com.chenshop.fonts.TextView
             android:id="@+id/btnNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

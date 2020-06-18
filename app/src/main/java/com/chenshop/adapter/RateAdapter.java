@@ -18,12 +18,12 @@ import com.chenshop.view.activity.RateActivity;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class RateRecycleViewAdapter extends RecyclerView.Adapter<RateRecycleViewAdapter.RecyclerViewHolder> implements View.OnClickListener {
+public class RateAdapter extends RecyclerView.Adapter<RateAdapter.RecyclerViewHolder> implements View.OnClickListener {
     Context context;
 
     ArrayList<Beanclass> beanList;
     public  static  final  String BEAN_EXTRA = "BeanClass";
-    public RateRecycleViewAdapter(Context context, ArrayList<Beanclass> bean)
+    public RateAdapter(Context context, ArrayList<Beanclass> bean)
     {
         this.beanList = bean;
         this.context = context;
@@ -31,16 +31,16 @@ public class RateRecycleViewAdapter extends RecyclerView.Adapter<RateRecycleView
 
     @NonNull
     @Override
-    public RateRecycleViewAdapter.RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public RateAdapter.RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         View view = inflater.inflate(R.layout.list_item_my_rate, viewGroup, false);
-        return new RateRecycleViewAdapter.RecyclerViewHolder(view);
+        return new RateAdapter.RecyclerViewHolder(view);
     }
 
     @NonNull
 
     @Override
-    public void onBindViewHolder(@NonNull RateRecycleViewAdapter.RecyclerViewHolder recyclerViewHolder, int position) {
+    public void onBindViewHolder(@NonNull RateAdapter.RecyclerViewHolder recyclerViewHolder, int position) {
 
         // Beanclass bean = (Beanclass) getItem(position);
 
