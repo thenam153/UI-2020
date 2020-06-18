@@ -42,121 +42,48 @@ import java.lang.reflect.Field;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * SliderLayout is compound layout. This is combined with {@link PagerIndicator}
- * and {@link ViewPagerEx} .
- * <p>
- * There is some properties you can set in XML:
- * <p>
- * indicator_visibility
- * visible
- * invisible
- * <p>
- * indicator_shape
- * oval
- * rect
- * <p>
- * indicator_selected_color
- * <p>
- * indicator_unselected_color
- * <p>
- * indicator_selected_drawable
- * <p>
- * indicator_unselected_drawable
- * <p>
- * pager_animation
- * Default
- * Accordion
- * Background2Foreground
- * CubeIn
- * DepthPage
- * Fade
- * FlipHorizontal
- * FlipPage
- * Foreground2Background
- * RotateDown
- * RotateUp
- * Stack
- * Tablet
- * ZoomIn
- * ZoomOutSlide
- * ZoomOut
- * <p>
- * pager_animation_span
- */
+
 public class SliderLayout extends RelativeLayout {
 
     private Context mContext;
-    /**
-     * InfiniteViewPager is extended from ViewPagerEx. As the name says, it can scroll without bounder.
-     */
+
     private InfiniteViewPager mViewPager;
 
-    /**
-     * InfiniteViewPager adapter.
-     */
+
     private SliderAdapter mSliderAdapter;
 
-    /**
-     * {@link ViewPagerEx} indicator.
-     */
+
     private PagerIndicator mIndicator;
 
 
-    /**
-     * A timer and a TimerTask using to cycle the {@link ViewPagerEx}.
-     */
     private Timer mCycleTimer;
     private TimerTask mCycleTask;
 
-    /**
-     * For resuming the cycle, after user touch or click the {@link ViewPagerEx}.
-     */
     private Timer mResumingTimer;
     private TimerTask mResumingTask;
 
-    /**
-     * If {@link ViewPagerEx} is Cycling
-     */
     private boolean mCycling;
 
-    /**
-     * Determine if auto recover after user touch the {@link ViewPagerEx}
-     */
     private boolean mAutoRecover = true;
 
     private int mTransformerId;
 
-    /**
-     * {@link ViewPagerEx} transformer time span.
-     */
     private int mTransformerSpan = 1200;
 
     private boolean mAutoCycle;
 
-    /**
-     * the duration between animation.
-     */
+
     private long mSliderDuration = 4000;
 
-    /**
-     * Visibility of {@link PagerIndicator}
-     */
     private PagerIndicator.IndicatorVisibility mIndicatorVisibility = PagerIndicator.IndicatorVisibility.Invisible;
 
-    /**
-     * {@link ViewPagerEx} 's transformer
-     */
+
     private BaseTransformer mViewPagerTransformer;
 
-    /**
-     * @see BaseAnimationInterface
-     */
+
     private BaseAnimationInterface mCustomAnimation;
 
-    /**
-     * {@link PagerIndicator} shape, rect or oval.
-     */
+
 
     public SliderLayout(Context context) {
         this(context, null);
@@ -250,13 +177,7 @@ public class SliderLayout extends RelativeLayout {
         startAutoCycle(mSliderDuration, mSliderDuration, mAutoRecover);
     }
 
-    /**
-     * start auto cycle.
-     *
-     * @param delay       delay time
-     * @param duration    animation duration time.
-     * @param autoRecover if recover after user touches the slider.
-     */
+
     public void startAutoCycle(long delay, long duration, boolean autoRecover) {
         if (mCycleTimer != null) mCycleTimer.cancel();
         if (mCycleTask != null) mCycleTask.cancel();
@@ -276,9 +197,6 @@ public class SliderLayout extends RelativeLayout {
         mAutoCycle = true;
     }
 
-    /**
-     * pause auto cycle.
-     */
     private void pauseAutoCycle() {
         if (mCycling) {
             mCycleTimer.cancel();
@@ -291,11 +209,7 @@ public class SliderLayout extends RelativeLayout {
         }
     }
 
-    /**
-     * set the duration between two slider changes. the duration value must >= 500
-     *
-     * @param duration
-     */
+
     public void setDuration(long duration) {
         if (duration >= 500) {
             mSliderDuration = duration;
@@ -305,9 +219,7 @@ public class SliderLayout extends RelativeLayout {
         }
     }
 
-    /**
-     * stop the auto circle
-     */
+
     public void stopAutoCycle() {
         if (mCycleTask != null) {
             mCycleTask.cancel();
@@ -325,9 +237,7 @@ public class SliderLayout extends RelativeLayout {
         mCycling = false;
     }
 
-    /**
-     * when paused cycle, this method can weak it up.
-     */
+
     private void recoverCycle() {
         if (!mAutoRecover || !mAutoCycle) {
             return;
